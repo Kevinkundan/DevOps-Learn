@@ -1,0 +1,109 @@
+🐳 Docker Full Notes (Formatted)
+
+✅ Docker
+Docker is an open-source platform that automates the deployment and scaling in your application using the containerized technology. It is called Docker.
+
+
+📁 Dockerfile
+Dockerfile is a script that contains the instructions for building the Docker images.
+
+🧱 Docker Image
+Docker image is a read-only binary template that contains the instructions for creating a Docker container.
+
+
+📦 Docker Container
+Container holds the entire package that needs to run your application, including runtime system tools, system libraries. We can call it like a virtual machine.
+
+
+☁️ Docker Hub
+Docker Hub is a cloud-based repository service that allows users to upload and download your images in private and public environments.
+
+
+🌐 Docker Networking
+🕸️ Bridge Network
+Containers are connected to the default bridge network and can communicate with each other.
+
+Bridge network gets its own private IP address like 172.16.0.0/17.
+
+Types:
+Default – It is automatically created when Docker is installed. DNS is not supported.
+
+Custom – Manually created by the user. It offers more flexibility and better isolation compared to default. DNS is supported.
+
+🖥️ Host Network
+The container shares the host network stack.
+
+No isolation between container and host network.
+
+🧬 Overlay
+Designed for Docker Swarm.
+
+Connects multiple Docker daemons to enable communication between Docker Swarm services.
+
+🌐 MacVLAN
+It assigns a MAC address to each container.
+
+🚫 None
+The container has no network.
+
+Ideal when you want complete isolation between container and host network.
+
+
+⚙️ Dockerfile Instructions
+RUN – Used to execute the command during the build process (e.g., install packages and dependencies).
+
+CMD – A default command to run when the container is started.
+
+ENTRYPOINT – Used to specify a fixed command that always runs when the container starts. Any additional arguments passed to the container will be passed to the entrypoint.
+
+COPY – Used to copy the files and directories from the build context into the image.
+
+ADD – Similar to COPY but with extra features. It can download files from a URL and extract tar archives.
+
+
+🧩 Container Runtime
+Container runtime is a software component responsible for running containers on the host system. It is used to start, stop, and manage containers.
+
+
+
+🛠️ Docker Engine
+Docker Engine is the core software that enables you to build, run, and manage containers on a host machine.
+
+🧾 Docker Compose
+It is a tool used to define and run multi-container Docker applications.
+It allows you to manage multiple Docker containers using a single YAML configuration file (docker-compose.yml).
+
+
+
+💾 Docker Volume
+A Docker Volume is a persistent storage used by Docker containers to store and share data.
+Volume data is available even after the container is removed or restarted.
+
+
+⚙️ Docker Daemon
+The Docker Daemon (dockerd) is the background service that:
+
+Manages all Docker containers
+
+Manages images, networks, and volumes
+
+🔄 Multi-Stage Build
+Multi-stage build in Docker uses multiple FROM statements in one Dockerfile to separate the build environment from the final runtime environment.
+
+✅ It helps to create smaller, cleaner, and more secure images by copying only the necessary build artifacts from the builder stage into the final image.
+
+🧱 Kubernetes Container Types
+Init Container – Runs before the main application container. Waits for a database or other service to be ready.
+
+Sidecar Container – Runs alongside the main application container.
+
+Ephemeral Container – Used for debugging a running Pod; helps troubleshoot and debug.
+
+🐧 Base Images
+Alpine – Very small and lightweight image compared to other images. Used to create smaller, faster, and more secure containers.
+
+Slim Image – A minimal version of a base image, containing only runtime components. Removes unnecessary files like documentation, package managers, libraries, and debugging tools.
+
+Distroless Image – Does not contain debugging tools, package managers, or OS tools. Contains only your app + its dependencies.
+
+
