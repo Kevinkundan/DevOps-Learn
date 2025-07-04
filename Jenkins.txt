@@ -1,0 +1,120 @@
+                                           ✅ Jenkins & CI/CD Concepts (Structured Format)
+
+🔧 Jenkins
+
+Jenkins is an open-source automation tool used for Continuous Integration (CI) and Continuous Delivery (CD).
+It helps automate the building, testing, and deployment of software — so that developers can deliver code faster and more reliably.
+
+Developers frequently merge code into a shared repository (like GitHub or Azure Repos), and each commit automatically triggers a build and test.
+
+🔁 CI/CD Concepts
+
+CI (Continuous Integration)
+After CI passes, the code is automatically packaged and staged for deployment (e.g., to a test or staging environment).
+Manual approval can be added before production.
+
+CD (Continuous Deployment)
+
+An extension of Continuous Delivery — but here, the code is automatically deployed to production without manual approval after all tests pass.
+
+📝 Jenkinsfile
+
+A Jenkinsfile is a text file that contains the pipeline as code for Jenkins.
+It defines how your CI/CD pipeline runs — including build, test, scan, and deploy steps — using a scripting language called Groovy.
+
+🆚 Declarative vs Scripted Pipeline
+
+Declarative Pipeline:
+
+Is a structured, user-friendly way to define CI/CD workflows using a Jenkinsfile. It follows best practices and makes pipeline easy to manage.
+
+Scripted Pipeline:
+
+Is written in Groovy language. It offers more flexibility and control, but it is more complex and harder to maintain.
+
+🧩 Jenkins Job
+
+A Jenkins Job is a task or project that Jenkins runs.
+It defines what to do (like building code, running tests, deploying an app), when to do it, and how to do it.
+You create jobs in Jenkins to automate steps in your CI/CD pipeline.
+
+🛠️ Types of Jenkins Jobs
+
+✅ Freestyle Project
+
+Most basic and simple job
+
+GUI-based configuration (no code needed)
+
+Good for small scripts or manual tasks
+
+🧩 Example: Run a shell command, trigger a build, copy files
+
+✅ Pipeline Job
+
+Used for Pipeline-as-Code (Jenkinsfile)
+
+You define your CI/CD pipeline in Groovy script
+
+More powerful and flexible than Freestyle
+
+🧩 Example: Multi-stage build-test-deploy using Docker and Kubernetes
+
+✅ Multibranch Pipeline
+
+Automatically creates separate jobs for each branch in a Git repository
+
+Great for GitHub/GitLab integration with multiple feature branches
+
+🧩 Example: Run a separate Jenkins pipeline for dev, test, and main branches
+
+✅ Folder Job
+
+Organize multiple jobs into folders
+
+Helps manage large Jenkins environments with many projects
+
+🤖 Jenkins Slave (Agent)
+
+A Jenkins Slave, now called a Jenkins Agent, is a separate machine (physical or virtual) that connects to the Jenkins Master (Controller).
+It helps distribute the workload by running jobs (builds, tests, deployments) on different machines.
+
+🔔 GitHub Webhook
+
+A GitHub webhook is a way for GitHub to automatically notify another system when something happens in a repository (like a new push, pull request, or issue).
+🧩 For example: When you push code to GitHub, a webhook can automatically trigger a Jenkins pipeline.
+
+📚 Shared Library
+
+A Shared Library is a reusable set of Groovy scripts that can be used across multiple pipelines.
+It helps maintain clean, modular, and reusable pipeline code.
+
+📦 Nexus
+
+Nexus is a repository management tool.
+It is used to store, manage, and distribute software packages (also called artifacts).
+
+✅ Purpose:
+
+Helps teams share and reuse packages (like JARs, WARs, Docker images)
+
+Acts as a central hub for build artifacts
+
+Supports many formats: Maven, npm, NuGet, Docker, PyPI, etc
+
+💬 Groovy
+
+Groovy language is a scripting language used in Jenkins pipelines for automation.
+Jenkins pipelines are written in Declarative or Scripted syntax in Groovy language.
+
+⚙️ Maven
+
+Maven is used to build, test, and package Java applications.
+It automates dependency management and the build process.
+
+🖼️ Blue Ocean
+
+Blue Ocean is a modern, visual user interface for Jenkins.
+It makes it easy to view, manage, and debug pipeline builds through a graphical representation of stages and steps.
+
+
