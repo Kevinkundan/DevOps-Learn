@@ -1,0 +1,331 @@
+                                                 ☸️ Kubernetes
+
+
+🚑 Auto Healing
+
+Auto Healing is a automatically diducting fixing the failed pod. It resededuling with the healthy worker node.
+
+🧠 Kubernetes
+
+Is a open-source container orechtration tools. It help to manage the containerise application in a cluster envrionement.
+
+🧱 Pod
+
+Pod is a smallest deployable unit that contain one and one more container inside the pod.
+
+📛 Namespace
+
+Namespace is a provide level of isolation between. Is a way divide the cluster resource among the multiple project.
+
+⚙️ Deployment
+
+Deployment is a provide desired state. Its providling rolling update and rollback your application.
+
+👷 DaemonSet
+
+Daemon set ensure copy of the pod running running on every worker nodes.
+
+🌐 Kubernetes Service Types
+
+ClusterIP – Is a expose your pod within the cluster using the cluster IP. You cannot access your pod from outside the cluster.
+
+NodePort – Is a expose your pod from outside the cluster using the nodeport IP and port. It's automatic expose the all worker with the static port number 30000 to 32767.
+
+Load Balancer – It's a automatic provising ALB in your infratures.
+
+ExternalName – Is a map the external service like RDS in cloud environment using the RDS endpoint. We can communication with each.
+
+Headless – Is a expose your pod within the cluster with DNS name
+
+ResourceQuota is  object used by storage administrators to set limits on resource consumption within a specific namespace. It helps control the use of compute resources like CPU, memory, storage.
+
+🚫 Taint
+
+Taint is applied to a node that indicates it should not accept any pod that does not have the corresponding toleration.
+
+✅ Toleration
+
+Toleration is applied to pods that allow them to schedule on nodes that have matching taints.
+
+🔐 ConfigMap
+
+ConfigMap is used to store non-sensitive information as key-value pairs.
+
+🔐 Secret
+
+Secret is used to store sensitive information as key-value pairs like passwords, tokens, and API keys.
+
+🌐 Ingress
+
+Ingress is an API object that manages resources within the cluster for HTTP and HTTPS traffic.
+
+
+🌐 Ingress Controller
+
+Ingress does not work by itself. You need an ingress controller like NGINX. It processes the ingress rules and handles actual traffic.
+
+🏷️ Label
+
+Label is a key-value pair attached to Kubernetes objects like Pod, Service, Deployment, and HPA.
+
+🎯 Selector
+
+Selector is used to select the object that matches the label.
+
+💾 Persistent Volume (PV)
+
+PV is a persistent volume that represents a piece of storage in a cluster.
+
+📥 Persistent Volume Claim (PVC)
+
+PVC is a persistent volume claim to request the storage from the PV.
+
+🔐 RBAC (Role-Based Access Control)
+
+RBAC helps you to control who can do what in your cluster and prevents unauthorized access.
+
+🧩 Key RBAC Components:
+
+1. Role – A set of permissions within a namespace.
+
+2. ClusterRole – A set of permissions cluster-wide.
+
+3. RoleBinding – Grants the permissions defined in a Role to a user or service account within a namespace.
+
+4. ClusterRoleBinding – Grants the permissions defined in a ClusterRole to a user, group, or service account across the entire cluster.
+
+📝 Annotations
+
+Annotations are key-value pairs used to store non-identifying metadata to objects like pod, service, or deployment for automation or debugging purposes.
+
+⚙️ CRD (Custom Resource Definition)
+
+CRD allows you to create your own custom Kubernetes resource.
+
+📦 ReplicaSet
+
+ReplicaSet ensures a specific number of identical pods are always running.
+
+🔁 StatefulSet
+
+StatefulSet is a used statefull application when ordering, identity, and storage are important.
+
+🌐 CoreDNS
+
+CoreDNS is the default DNS server in Kubernetes. It is responsible for service discovery inside the cluster—allowing pods to find each other using DNS names.
+
+🧪 Probes
+
+1. livenessProbe – Checks if the container is alive. If it fails, Kubernetes restarts the container.
+
+2. readinessProbe – Checks if the container is ready to receive traffic. If it fails, the pod is removed from service endpoints.
+
+3. startupProbe – Used at startup. Allows slow apps to take time before livenessProbe starts.
+
+📁 kubeconfig
+
+kubeconfig is a configuration file used by kubectl. It contains all the needed details to authenticate and communicate with the cluster.
+
+Includes:
+
+Cluster name and API server URL
+
+User credentials (token, certificate)
+
+🌐 CNI (Container Network Interface)
+
+CNI is a framework that allows Kubernetes to manage network connectivity for containers.
+
+Why is CNI Needed?
+
+By default, Kubernetes does not provide networking. CNI plugins handle:
+
+✅ Assigning IP addresses
+✅ Setting up network rules (routing, NAT, firewall)
+✅ Enabling pod-to-pod communication across nodes
+
+Popular CNI Plugin:
+
+Weave – Easy to set up, supports encryption.
+
+📦 Helm
+
+Helm is a package manager for Kubernetes that helps you define, install, and upgrade applications on Kubernetes clusters.
+
+📦 Helm Chart
+
+Helm Chart is a pre-configured application package that contains all the necessary manifests (YAML files) in Kubernetes needed to deploy the application. It is a blueprint for deploying applications in Kubernetes.
+
+bash
+Copy
+Edit
+helm create my-chart
+📘 Kubernetes Core Components
+
+1. ApiServer – Front end of Kubernetes, handling all requests (like kubectl commands).
+
+2. ETCD – Database that stores the cluster information in key-value pairs.
+
+3. Kube-Scheduler – Schedules pods on nodes based on resource availability.
+
+4. Kube-Controller – Manages the overall state, handles tasks such as launching new pods.
+
+5. Kubelet – Agent running on the node, shares success/fail report with master.
+
+6. kube-proxy – Manages network traffic between pods and services.
+
+📍 Node Selector
+
+Node Selector allows you to schedule a pod on specific nodes based on labels. It is the simplest way to assign pods to nodes.
+
+⚖️ HAProxy (High Availability Proxy)
+
+HAProxy is an open-source load balancer and proxy server used to distribute traffic across multiple servers.
+
+✅ Load Balancing
+✅ High Availability
+✅ Reverse Proxy
+✅ SSL Termination
+✅ Health Checks
+
+🚀 Deployment Strategies
+
+1. Rolling Update – Allows the new version of the application to replace the old version without taking the entire application offline. 
+   A percentage of the pods update in a controlled manner.
+
+2. Recreate – All old pods are terminated before new ones are created. Shuts down all existing pods and then creates new ones with the 
+   updated version.
+
+3. Blue-Green Deployment – Two separate environments (Blue and Green) are used. Blue is live and serving traffic while Green is 
+   QAtesting. Once validated, the traffic is switched to Green.
+
+4. Canary Deployment – A technique for rolling out new features to a small group of users or servers first. If everything works, the 
+   update is gradually rolled out to the whole system.
+
+🧾 Ports
+
+1. containerPort – Port where the application inside the container is running.
+
+2. targetPort – Port the Service uses to forward traffic to the container (usually same as containerPort).
+
+3. servicePort – Port that the Service exposes to the cluster.
+
+☁️ Amazon Kubernetes Services
+
+🔷 Amazon EKS (Elastic Kubernetes Service) Fully managed Kubernetes service by AWS. No need to install/maintain the control plane.
+
+  Flexible and offers more control. Needs setup: pods, deployments, services, HPA.
+
+🔶 Amazon ECS (Elastic Container Service) Fully managed container orchestration service. Can run containers on VMs or with AWS Fargate.
+
+  Easy to use, best for simple container apps.
+
+🟩 Fargate
+
+Fargate is a serverless compute engine for containers on AWS.
+Run containers without managing servers or clusters.
+
+📊 Auto Scaling
+
+HPA (Horizontal Pod Autoscaler) – Automatically scales the number of pods based on metrics like CPU or memory usage.
+
+VPA (Vertical Pod Autoscaler) – Automatically adjusts the CPU and memory resources of existing pods.
+
+🔐 Network Policy
+
+Used to control traffic flow between pods and other network endpoints.
+By default, all pods can communicate with each other.
+With NetworkPolicy, you can restrict traffic using rules based on:
+
+✅ Pod selectors
+✅ Namespaces
+✅ IP blocks
+✅ Ports
+
+
+🔍 What Happens When You Run kubectl get pods
+
+
+1️⃣ Client Sends Request
+
+When you execute kubectl get pods, the kubectl client sends an HTTP GET request to the Kubernetes API Server.
+
+2️⃣ Authentication & Authorization
+
+✅ Authentication – Who Are You?
+
+Kubernetes verifies your identity to ensure you're authorized to interact with the cluster.
+
+The kubectl client uses credentials from your kubeconfig file (typically at ~/.kube/config) to authenticate you.
+
+These credentials may include:
+
+Bearer tokens
+
+Client certificates
+
+Username/password
+
+The API server validates these credentials against a known identity.
+
+🔐 Authorization – What Can You Do?
+
+Kubernetes checks if you're allowed to perform the action (get or list) on the Pods resource.
+
+It uses RBAC (Role-Based Access Control) or other plugins to determine access.
+
+It evaluates whether:
+
+You're authorized for the requested verb (get)
+
+You're authorized on the resource (pods)
+
+You're allowed in the namespace (or cluster-wide)
+
+3️⃣ API Server Response
+If authentication and authorization succeed, the API server:
+
+Fetches the list of Pods
+
+Returns the response to the kubectl client
+
+4️⃣ Display Output
+
+kubectl parses the response
+
+Displays the list of Pods in your terminal
+
+
+
+🧱 Monolith vs 🧩 Microservices
+
+🧱 Monolith
+
+"One big box that contains everything."
+
+Example: Login, payments, notifications — all inside one application
+
+To update login, you must touch the entire app
+
+If one part fails, the entire application can crash
+
+Hard to scale and maintain over time
+
+🧩 Microservices
+
+"Multiple small boxes, each with its own job."
+
+Example: Separate services for login, payments, notifications
+
+Each service runs independently and communicates via APIs
+
+Easier to:
+
+Test
+
+Deploy
+
+Scale
+
+Fix or replace individual services without impacting others
+
