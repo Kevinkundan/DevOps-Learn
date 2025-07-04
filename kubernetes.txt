@@ -41,7 +41,32 @@ ResourceQuota is  object used by storage administrators to set limits on resourc
 
 🚫 Taint
 
+
 Taint is applied to a node that indicates it should not accept any pod that does not have the corresponding toleration.
+
+ 1. NoSchedule
+
+📌 Meaning: The Pod will not be scheduled on the Node unless it tolerates the taint.
+
+kubectl taint nodes node1 team=uk:NoSchedule
+
+➡️ Only Pods that tolerate team=uk will be scheduled on node1
+
+
+🔹 2. PreferNoSchedule
+
+📌 Meaning: ➡️ Kubernetes will try to schedule the pod somewhere else. But if no other worker node is available, it might place the Pod on node1.
+
+
+
+3. NoExecute
+
+📌 Meaning:
+
+If a Pod is already running and doesn't tolerate the taint, it will be remove.
+
+New Pods will not be scheduled unless they tolerate the taint.
+
 
 ✅ Toleration
 

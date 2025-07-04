@@ -1,0 +1,79 @@
+1. When resources has been changed outside of Terraform, and you want the state file to reflect those changes without changing the 
+   configuration.  (terraform refresh)
+
+2. When you created resources manually (e.g., in AWS, Azure) or with another tool, and now want Terraform to manage them
+
+   terraform import <resource_type>.<resource_name> <real_world_resource_id>
+   terraform import aws_instance.web i-1234567890abcdef0
+
+Terraform is an open-source Infrastructure as Code (IaC) tool.
+It helps to create and manage infrastructure using a high-level configuration language called HCL (HashiCorp Configuration Language). 
+
+terraform init
+It initializes the environment in your current directory.
+
+Downloads required providers and sets up the backend.
+
+
+🔹 terraform plan
+It shows the changes that will be made to your infrastructure.
+
+Helps you review what Terraform will create, update, or delete — before applying.
+
+
+🔹 terraform apply
+It applies the changes to your infrastructure.
+
+Creates or updates resources based on your .tf files and the plan.
+
+🔌 Terraform Provider vs Resource
+🔹 Provider
+A provider is a plugin that interacts with various APIs like AWS, Azure, GCP, etc.
+
+It tells Terraform which cloud or platform you're working with.
+
+✅ Example:
+provider "azurerm" {} → Talks to Azure API
+
+🔹 Resource
+A resource is the actual component you want to create, update, or delete in your infrastructure.
+
+Examples: VMs, Storage Accounts, Subnets, AKS, etc.
+
+✅ Example:
+resource "azurerm_virtual_machine" "vm1" { ... }
+
+
+Workspace is used to manage multiple state files in a single configuration directory.
+It allows you to use the same Terraform code for different environments like dev, test, or prod.
+
+A module is a reusable block of Terraform code. It helps you organize and reuse your infrastructure configuration.
+
+🧠 Types of Modules:
+
+Root Module – Your main Terraform config in the current directory
+
+Child Module – A reusable module, either local or from a registry (e.g., Terraform Registry)
+
+Is used to track resources managed by Terraform. It stores metadata about the infrastructure
+
+By default, Terraform keeps the tfstate file locally. To enable team collaboration, store it remotely using Amazon S3 bucket.
+
+
+Terraform variables are used to parameterize configurations, making them reusable and flexible. They allow defining dynamic 
+ values instead of hardcoding them in Terraform files.
+
+
+ Terraform outputs provide a way to display useful information after applying a Terraform configuration(e.g., IP addresses, DNS names)
+
+That allow you to fetch existing infrastructure from external providers (e.g., AWS, Azure, GCP) without creating new resources.
+
+refers to local values, which are named values that you can define in a Terraform configuration and then reference 
+ your code to make it cleaner and easier to manage.
+
+locals {
+  instance_type = "t2.micro"
+  environment   = "dev"
+}
+
+
