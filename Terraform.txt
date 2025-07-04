@@ -1,79 +1,126 @@
-1. When resources has been changed outside of Terraform, and you want the state file to reflect those changes without changing the 
-   configuration.  (terraform refresh)
+                                                 🛠️ Terraform Key Concepts – Quick Notes
 
-2. When you created resources manually (e.g., in AWS, Azure) or with another tool, and now want Terraform to manage them
+✅ 1. When to Use terraform refresh
 
-   terraform import <resource_type>.<resource_name> <real_world_resource_id>
-   terraform import aws_instance.web i-1234567890abcdef0
+When resources have changed outside of Terraform, and you want the state file to reflect those changes without modifying the configuration.
+
+terraform refresh
+✅ 2. When to Use terraform import
+
+When resources were created manually (e.g., in AWS, Azure) or by another tool, and you now want Terraform to manage them.
+
+
+terraform import <resource_type>.<resource_name> <real_world_resource_id>
+
+terraform import aws_instance.web i-1234567890abcdef0
+
+🌍 What is Terraform?
 
 Terraform is an open-source Infrastructure as Code (IaC) tool.
-It helps to create and manage infrastructure using a high-level configuration language called HCL (HashiCorp Configuration Language). 
 
-terraform init
-It initializes the environment in your current directory.
+It helps to create and manage infrastructure using a high-level configuration language called HCL (HashiCorp Configuration Language).
+
+🔧 Terraform Basic Commands
+
+🔹 terraform init
+
+Initializes the environment in the current directory.
 
 Downloads required providers and sets up the backend.
 
-
 🔹 terraform plan
-It shows the changes that will be made to your infrastructure.
 
-Helps you review what Terraform will create, update, or delete — before applying.
+Shows what changes will be made to the infrastructure.
 
+Helps you review create/update/delete actions before applying.
 
 🔹 terraform apply
-It applies the changes to your infrastructure.
 
-Creates or updates resources based on your .tf files and the plan.
+Applies the planned changes to real infrastructure.
+
+Creates or updates resources based on .tf files and the plan.
 
 🔌 Terraform Provider vs Resource
-🔹 Provider
-A provider is a plugin that interacts with various APIs like AWS, Azure, GCP, etc.
 
-It tells Terraform which cloud or platform you're working with.
+🔹 Provider
+
+A plugin that interacts with cloud APIs (AWS, Azure, GCP, etc.)
+
+Tells Terraform which platform to work with.
 
 ✅ Example:
-provider "azurerm" {} → Talks to Azure API
+
+provider "azurerm" {}  # Talks to Azure API
 
 🔹 Resource
-A resource is the actual component you want to create, update, or delete in your infrastructure.
 
-Examples: VMs, Storage Accounts, Subnets, AKS, etc.
+The actual component you create/update/delete in the cloud.
+
+Example: VM, subnet, AKS cluster, S3 bucket, etc.
 
 ✅ Example:
-resource "azurerm_virtual_machine" "vm1" { ... }
 
+resource "azurerm_virtual_machine" "vm1" {
+  ...
+}
 
-Workspace is used to manage multiple state files in a single configuration directory.
-It allows you to use the same Terraform code for different environments like dev, test, or prod.
+🗂️ Workspace
 
-A module is a reusable block of Terraform code. It helps you organize and reuse your infrastructure configuration.
+Manages multiple state files using the same Terraform configuration.
+
+Useful for environments like dev, test, and prod.
+
+✅ Example:
+
+terraform workspace new dev
+
+📦 Module
+
+A reusable block of Terraform code. Helps organize and reuse infrastructure logic.
 
 🧠 Types of Modules:
 
-Root Module – Your main Terraform config in the current directory
+Root Module – The main config in your current directory.
 
-Child Module – A reusable module, either local or from a registry (e.g., Terraform Registry)
+Child Module – A reusable module (local or from Terraform Registry).
 
-Is used to track resources managed by Terraform. It stores metadata about the infrastructure
+📄 Terraform State
+Tracks resources managed by Terraform.
 
-By default, Terraform keeps the tfstate file locally. To enable team collaboration, store it remotely using Amazon S3 bucket.
+Stores metadata about infrastructure in a file (terraform.tfstate).
+
+✅ By default, state is stored locally.
+
+👉 For team collaboration, store the state remotely (e.g., Amazon S3, Azure Blob).
+
+🧮 Terraform Variables
+Variables allow you to parameterize your config instead of hardcoding values.
+
+variable "region" {
+  default = "us-east-1"
+}
+
+📤 Terraform Outputs
+
+Used to display important info after deployment, like public IP or DNS name.
 
 
-Terraform variables are used to parameterize configurations, making them reusable and flexible. They allow defining dynamic 
- values instead of hardcoding them in Terraform files.
+output "vm_ip" {
+  value = azurerm_public_ip.example.ip_address
+}
+🔄 Data Sources
 
+Allow you to fetch existing infrastructure from external providers without creating new resources.
 
- Terraform outputs provide a way to display useful information after applying a Terraform configuration(e.g., IP addresses, DNS names)
+✅ Example: Get existing VNet, existing AMI ID, etc.
 
-That allow you to fetch existing infrastructure from external providers (e.g., AWS, Azure, GCP) without creating new resources.
+🧾 Locals
 
-refers to local values, which are named values that you can define in a Terraform configuration and then reference 
- your code to make it cleaner and easier to manage.
+Named values you define in your config to make it cleaner and reusable.
+
 
 locals {
   instance_type = "t2.micro"
   environment   = "dev"
 }
-
 
