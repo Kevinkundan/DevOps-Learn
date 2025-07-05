@@ -1,0 +1,52 @@
+                                                                           📘 Ansible Fundamentals and Best Practices
+
+
+🛠️ Ansible Overview
+Ansible is a open-source automation tools used to configuration management and application deployment and tasks automations is called Ansible.
+
+📘 Core Components
+📄 Playbook
+A Playbook is a YAML file in Ansible that contains a list of tasks to be executed on one or more target machines.
+It is used for automating complex tasks like installing software, restarting services, copying files, etc.
+Playbooks can manage multiple servers at the same time.
+
+🧱 Module
+A Module is a pre-defined unit of work in Ansible.
+Each task in a playbook uses a module.
+
+⚡ Ad-hoc Commands
+Ad-hoc commands are one-line Ansible commands used to perform quick tasks without writing a full playbook.
+
+📂 Inventory
+Inventory is a file in Ansible that contains a list of target machines (hosts or servers) where Ansible will run the tasks.
+
+🗂️ Hosts File
+The hosts file (also called the inventory file) is used to define the target systems that Ansible will manage.
+
+🧩 Role
+Role is a way to organize your Ansible code in a clean and reusable structure.
+It is used to break big playbooks into small, reusable components.
+Each role contains its own tasks, handlers, variables, files, templates, etc.
+
+🔁 Handler
+Handler is a special type of task in Ansible that runs only when notified.
+Handlers are used to perform actions like restarting a service, after configuration file changes.
+
+🔧 Task
+A Task is a single unit of work in Ansible.
+Each task performs one specific action, like installing a package, copying a file, starting a service, etc.
+
+🚀 Other Concepts
+💥 GitHub Actions
+GitHub Actions is a CI/CD automation tool provided by GitHub.
+It allows you to automate workflows directly within your GitHub repository.
+With GitHub Actions, you can build, test, and deploy code automatically in response to events like code pushes, pull requests, releases, or scheduled times.
+
+🔐 Become (Privilege Escalation)
+It allows to Ansible to execute the tasks with sudo privilege which is necessary when performing the actions like installing packages, copy the files, restarting services, etc.
+
+♻️ Idempotency
+Idempotency means that running the same task of multiple times will always produce the same result,
+and it does not make changes if the system is already in the desired state.
+
+
