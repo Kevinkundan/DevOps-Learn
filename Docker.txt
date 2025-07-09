@@ -106,7 +106,7 @@ Init Container –  is a special container that run before the main application 
 
 Sidecar Container – is a additional container that run alongside the main application container within the same pod, A logging sidecar container collecting and forwarding logs to a centralized logging system.
 
-Ephemeral Container – used for Debugging a running the pod without restart it. running a temporay shell a pod for troublehooting 
+Ephemeral Container – used for Debugging a running the containers without restart it. running a temporay shell a pod for troublehooting 
 
 🐧 Base Images
 Alpine – Very small and lightweight image compared to other images. Used to create smaller, faster, and more secure containers.
