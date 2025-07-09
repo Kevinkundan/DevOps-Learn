@@ -67,7 +67,7 @@ Container runtime is a software component responsible for running containers on 
 
 
 🛠️ Docker Engine
-Docker Engine is the core software that enables you to build, run, and manage containers on a host machine.
+Docker Engine is the core component that enables you to build, run, and manage containers on a host machine.
 
 🧾 Docker Compose
 It is a tool used to define and run multi-container Docker applications.
