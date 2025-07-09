@@ -102,11 +102,11 @@ Multi-stage build in Docker uses multiple FROM statements in one Dockerfile to s
 ✅ It helps to create smaller, cleaner, and more secure images by copying only the necessary build artifacts from the builder stage into the final image.
 
 🧱 Kubernetes Container Types
-Init Container –  is a special containers that Runs before the main application container. Waits for a database to be ready before starting the main application containers.
+Init Container –  is a special container that run before the main application container in a pod start, A init container wait for the database to be ready before starting the main application.
 
-Sidecar Container – it is a additional container that Runs alongside the main application container.
+Sidecar Container – is a additional container that run alongside the main application container within the same pod, A logging sidecar container collecting and forwarding logs to a centralized logging system.
 
-Ephemeral Container – it is Used for debugging  running  container within the Pod; it helps to troubleshoot and debug. we used in prod environment 
+Ephemeral Container – used for Debugging a running the pod without restart it. running a temporay shell a pod for troublehooting 
 
 🐧 Base Images
 Alpine – Very small and lightweight image compared to other images. Used to create smaller, faster, and more secure containers.
