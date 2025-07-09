@@ -70,7 +70,7 @@ Container runtime is a software component responsible for running containers on 
 Docker Engine is the core component that enables to you run, build, and manage containers on a host machine.
 
 🧾 Docker Compose
-It is a tool used to define and run multi-container Docker applications.
+It is a tool used to define and run multi-container of Docker applications.
 It allows you to manage multiple Docker containers using a single YAML configuration file (docker-compose.yml).
 
 
