@@ -104,7 +104,7 @@ Multi-stage build in Docker uses multiple FROM statements in one Dockerfile to s
 🧱 Kubernetes Container Types
 Init Container –  is a special containers that Runs before the main application container. Waits for a database to be ready before starting the main application containers.
 
-Sidecar Container – it is Runs alongside the main application container.
+Sidecar Container – it is a additional container that Runs alongside the main application container.
 
 Ephemeral Container – Used for debugging a running Pod; helps troubleshoot and debug.
 
