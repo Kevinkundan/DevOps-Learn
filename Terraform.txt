@@ -7,7 +7,7 @@ When resources have been changed outside of Terraform, and you want the state fi
 terraform refresh
 ✅ 2. When to Use terraform import
 
-When resources were created manually (e.g., in AWS, Azure) or by another tool, and you now want Terraform to manage them.
+When resources has been created manually (e.g., in AWS, Azure, GCP) or by another tool, and you now want Terraform to manage them.
 
 
 terraform import <resource_type>.<resource_name> <real_world_resource_id>
