@@ -113,6 +113,6 @@ Alpine – Very small and lightweight image compared to other images. Used to cr
 
 Slim Image – A minimal version of a base image, it give the basic functionlity its containing only runtime components. Removes unnecessary files like documentation, package managers, libraries, and debugging tools.
 
-Distroless Image – Does not contain debugging tools, package managers, or OS tools. Contains only your app + its dependencies.
+Distroless Image – its not providing the debugging tools, package managers, or OS tools. its Contains only your app + its dependencies.
 
 
