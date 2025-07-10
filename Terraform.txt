@@ -2,7 +2,7 @@
 
 ✅ 1. When to Use terraform refresh
 
-When resources have been changed outside of Terraform, and you want the state file to reflect those changes without modifying the configuration.
+When resources have been changed outside of Terraform, and you want the state file to reflect those changes without modifying the configuration files.
 
 terraform refresh
 ✅ 2. When to Use terraform import
