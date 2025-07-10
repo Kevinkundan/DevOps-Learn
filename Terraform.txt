@@ -30,7 +30,7 @@ Downloads required providers and sets up the backend.
 
 🔹 terraform plan
 
-Shows what changes will be made to the infrastructure.
+Shows what changes that terraform will be make.
 
 Helps you review create/update/delete actions before applying.
 
