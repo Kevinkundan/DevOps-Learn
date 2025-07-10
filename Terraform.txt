@@ -46,7 +46,7 @@ Creates or updates resources based on .tf files and the plan.
 
 A plugin that interacts with cloud APIs (AWS, Azure, GCP, etc.) that Tells  to Terraform which platform to work with.
 
-A resource is an actual infrastructure component that you want to create, update, or delete using Terraform — such as an S3 bucket, Virtual Machine (VM), Virtual Network (VNet/VPC), Storage Account, etc.
+A resource is an actual  component that you want to create, update, or delete in your infrastructure — such as an S3 bucket, Virtual Machine (VM), Virtual Network (VNet/VPC), Storage Account, etc.
 
 🗂️ Workspace
 
