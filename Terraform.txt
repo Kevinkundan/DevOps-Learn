@@ -44,31 +44,11 @@ Creates or updates resources based on .tf files and the plan.
 
 🔹 Provider
 
-A plugin that interacts with cloud APIs (AWS, Azure, GCP, etc.)
-
-Tells Terraform which platform to work with.
-
-✅ Example:
-
-provider "azurerm" {}  # Talks to Azure API
-
-🔹 Resource
-
-The actual component you create/update/delete in the cloud.
-
-Example: VM, subnet, AKS cluster, S3 bucket, etc.
-
-✅ Example:
-
-resource "azurerm_virtual_machine" "vm1" {
-  ...
-}
+A plugin that interacts with cloud APIs (AWS, Azure, GCP, etc.) that Tells  to Terraform which platform to work with.
 
 🗂️ Workspace
 
-Manages multiple state files using the same Terraform configuration.
-
-Useful for environments like dev, test, and prod.
+it is Manages multiple state files  within single configuration directory . that allowing to you maintain the separate environments like dev, QA, and prod.
 
 ✅ Example:
 
