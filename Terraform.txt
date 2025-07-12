@@ -67,16 +67,14 @@ Root Module – The main config in your current directory.
 Child Module – A reusable module (local or from Terraform Registry).
 
 📄 Terraform State
-Tracks resources managed by Terraform.
+Is used to track resources managed by Terraform. It stores metadata about the infrastructure
 
-Stores metadata about infrastructure in a file (terraform.tfstate).
-
-✅ By default, state is stored locally.
-
-👉 For team collaboration, store the state remotely (e.g., Amazon S3, Azure Blob).
+ By default, Terraform keeps the tfstate file locally. To enable team collaboration, store it remotely using Amazon S3 bucket.
 
 🧮 Terraform Variables
-Variables allow you to parameterize your config instead of hardcoding values.
+
+Terraform variables are used to parameterize configurations, making them reusable and flexible. They allow defining dynamic 
+ values instead of hardcoding them in Terraform files.
 
 variable "region" {
   default = "us-east-1"
@@ -84,7 +82,7 @@ variable "region" {
 
 📤 Terraform Outputs
 
-Used to display important info after deployment, like public IP or DNS name.
+ Terraform outputs is  a way to display useful information after applying a Terraform configuration(e.g., IP addresses, DNS names)
 
 
 output "vm_ip" {
