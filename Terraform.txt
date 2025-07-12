@@ -82,7 +82,7 @@ variable "region" {
 
 📤 Terraform Outputs
 
- Terraform outputs is  a way to display useful information after applying a Terraform configuration(e.g., IP addresses, DNS names)
+ Terraform outputs is  a way to display useful information after applying a Terraform configuration files (e.g., IP addresses, DNS names)
 
 
 output "vm_ip" {
