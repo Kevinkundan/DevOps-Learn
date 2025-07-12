@@ -2,7 +2,7 @@
 
 
 🛠️ Ansible Overview
-Ansible is a open-source automation tools used to configuration management and application deployment and tasks automations is called Ansible.
+Ansible is a open-source automation tools it is used to configuration management and application deployment and tasks automations is called Ansible.
 
 📘 Core Components
 📄 Playbook
