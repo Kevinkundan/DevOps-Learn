@@ -7,8 +7,7 @@ Ansible is a open-source automation tools it is used to configuration management
 📘 Core Components
 📄 Playbook
 A Playbook is a YAML file that easy to read and write in ansible that contains the list of the tasks to be executed on one or more target machines.
-It is used for automating complex tasks like installing software, restarting services, copying files, etc.
-Playbooks can manage multiple servers at the same time.
+It is used for automate the  complex tasks like installing software, restarting services, copying files, etc.
 
 🧱 Module
 A Module is a pre-defined unit of work in Ansible.
