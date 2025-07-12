@@ -58,7 +58,7 @@ terraform workspace new dev
 
 📦 Module
 
-A reusable block of Terraform code. Helps organize and reuse infrastructure logic.
+A module is a reusable collection of Terraform configuration files (like resources, variables, outputs) grouped together to manage a specific piece of infrastructure — like a VPC, VM, or AKS cluster.
 
 🧠 Types of Modules:
 
