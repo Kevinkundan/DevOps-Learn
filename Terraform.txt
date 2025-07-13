@@ -96,8 +96,8 @@ Allow you to fetch existing infrastructure from external providers without creat
 
 🧾 Locals
 
-Named values you define in your config to make it cleaner and reusable.
-
+refers to local values, which are named values that you can define in a Terraform configuration and then reference 
+your code to make it cleaner and easier to manage.
 
 locals {
   instance_type = "t2.micro"
