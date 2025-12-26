@@ -1,103 +1,94 @@
 🐳 Docker Full Notes (Formatted)
 
-✅ Docker
-Docker is an open-source platform that automates the deployment and scaling in your application using the containerized technology. It is called Docker.
+1. Docker
+   Docker is an open-source platform that automates the deployment and scaling in your application using the containerized technology. It is called Docker.
 
 
-📁 Dockerfile
-Dockerfile is a script that contains the instructions for building the Docker images.
+2. Dockerfile
+   Dockerfile is a script that contains the instructions for building the Docker images.
 
-🧱 Docker Image
-Docker image is a read-only binary template that contains the instructions for creating a Docker container.
-
-
-📦 Docker Container
-Container holds the entire package that needs to run your application, including runtime system tools, system libraries. We can call it like a virtual machine.
+3.  Docker Image
+    Docker image is a read-only binary template that contains the instructions for creating a Docker container.
 
 
-☁️ Docker Hub
-Docker Hub is a cloud-based repository service that allows users to upload and download your images in private and public environments.
+4. Docker Container
+   Container holds the entire package that needs to run your application, including runtime system tools, system libraries. We can call it like a virtual machine.
 
 
-🌐 Docker Networking
-🕸️ Bridge Network
-Containers are connected to the default bridge network and can communicate with each other.
-
-Bridge network gets its own private IP address like 172.16.0.0/17.
-
-Types:
-Default – It is automatically created when Docker is installed. DNS is not supported.
-
-Custom – Manually created by the user. It offers more flexibility and better isolation compared to default. DNS is supported.
-
-🖥️ Host Network
-The container shares the host network stack.
-
-No isolation between container and host network.
-
-🧬 Overlay
-Designed for Docker Swarm.
-
-Connects multiple Docker daemons to enable communication between Docker Swarm services.
-
-🌐 MacVLAN
-It assigns a MAC address to each container.
-
-🚫 None
-The container has no network.
-
-Ideal when you want complete isolation between container and host network.
+5. Docker Hub
+   Docker Hub is a cloud-based repository service that allows users to upload and download your images in private and public environments.
 
 
-⚙️ Dockerfile Instructions
-RUN – Used to execute the command during the build process (e.g., install packages and dependencies).
+6. Docker Networking
+  1.  Bridge Network
+      Containers are connected to the default bridge network and can communicate with each other.
 
-CMD – A default command to run when the container is started.
+      Bridge network gets its own private IP address like 172.16.0.0/17.
 
-ENTRYPOINT – Used to specify a fixed command that always runs when the container starts. Any additional arguments passed to the container will be passed to the entrypoint.
+      Types:
+       1. Default – It is automatically created when Docker is installed. DNS is not supported.
 
-COPY – Used to copy the files and directories from the build context into the image.
+       2. Custom – Manually created by the user. It offers more flexibility and better isolation compared to default. DNS is supported.
 
-ADD – Similar to COPY but with extra features. It can download files from a URL and extract tar archives.
+2. Host Network
+   The container shares the host network stack. No isolation between container and host network.
 
+3.  Overlay
+    Designed for Docker Swarm. Connects multiple Docker daemons to enable communication between Docker Swarm services.
 
-🧩 Container Runtime
-Container runtime is a software component responsible for running containers on the host system. It is used to start, stop, and manage containers.
+4.  MacVLAN
+    It assigns a MAC address to each container.
 
-
-
-🛠️ Docker Engine
-Docker Engine is the core component that enables to you run, build, and manage containers on a host machine.
-
-🧾 Docker Compose
-It is a tool used to define and run multi-container of Docker applications.
-It allows you to manage multiple Docker containers using a single YAML configuration file (docker-compose.yml).
+5.  None
+    The container has no network. Ideal when you want complete isolation between container and host network.
 
 
-.dockerignore file- it is used to specify files and directories that should be (ignored) when building a Docker image. 
+7.  Dockerfile Instructions
+  1. RUN – Used to execute the command during the build process (e.g., install packages and dependencies).
 
-This helps in:
+  2. CMD – A default command to run when the container is started.
 
-Improving build content
+  3. ENTRYPOINT – Used to specify a fixed command that always runs when the container starts. Any additional arguments passed to the container will be passed to the entrypoint.
 
-Reducing the image size
+  4. COPY – Used to copy the files and directories from the build context into the image.
+
+  5. ADD – Similar to COPY but with extra features. It can download files from a URL and extract tar archives.
+
+
+8.  Container Runtime
+    Container runtime is a software component responsible for running containers on the host system. It is used to start, stop, and manage containers.
+
+
+9. Docker Engine
+   Docker Engine is the core component that enables to you run, build, and manage containers on a host machine.
+
+10. Docker Compose
+   It is a tool used to define and run multi-container of Docker applications.
+   It allows you to manage multiple Docker containers using a single YAML configuration file (docker-compose.yml).
+
+
+11. .dockerignore file- it is used to specify files and directories that should be (ignored) when building a Docker image. 
+
+     This helps in:
+
+       1. Improving build content
+
+       2. Reducing the image size
 
 
 
-💾 Docker Volume
-A Docker Volume is a persistent storage used by Docker containers to store and share data.
-Volume data is available even after the container is removed or restarted.
+13.  Docker Volume
+     A Docker Volume is a persistent storage used by Docker containers to store and share data.
+     Volume data is available even after the container is removed or restarted.
 
 
-⚙️ Docker Daemon
-The Docker Daemon (dockerd) is the background service that:
+14.  Docker Daemon
+     The Docker Daemon (dockerd) is the background service that:
 
-Manages all Docker containers
+     Manages all Docker containers Manages images, networks, and volumes
 
-Manages images, networks, and volumes
-
-🔄 Multi-Stage Build
-Multi-stage build in Docker uses multiple FROM statements in one Dockerfile to separate the build environment from the final runtime environment.
+15. Multi-Stage Build
+   Multi-stage build in Docker uses multiple FROM statements in one Dockerfile to separate the build environment from the final runtime environment.
 
 ✅ It helps to create smaller, cleaner, and more secure images by copying only the necessary build artifacts from the builder stage into the final image.
 
