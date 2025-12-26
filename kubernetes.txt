@@ -318,6 +318,22 @@ Displays the list of Pods in your terminal
 
 
 
+
+🧱 Kubernetes Container Types
+Init Container –  is a special container that run before the main application container in a pod start, A init container wait for the database to be ready before starting the main application.
+
+Sidecar Container – is a additional container that run alongside the main application container within the same pod, A logging sidecar container collecting and forwarding logs to a centralized logging system.
+
+Ephemeral Container – used for Debugging a running the containers without restart it. running a temporay shell a pod for troublehooting 
+
+🐧 Base Images
+Alpine – Very small and lightweight image compared to other images. Used to create smaller, faster, and more secure containers.
+
+Slim Image – A minimal version of a base image, it give the basic functionlity its containing only runtime components. Removes unnecessary files like documentation, package managers, libraries, and debugging tools.
+
+Distroless Image – its not providing the debugging tools, package managers, or OS tools. its Contains only your app + its dependencies.
+
+
 🧱 Monolith vs 🧩 Microservices
 
 🧱 Monolith
@@ -349,4 +365,7 @@ Deploy
 Scale
 
 Fix or replace individual services without impacting others
+
+
+
 
