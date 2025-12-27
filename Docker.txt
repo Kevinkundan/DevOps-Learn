@@ -48,7 +48,7 @@
 
   2. CMD – A default command to run when the container is started.
 
-  3. ENTRYPOINT – Used to specify a fixed command that always runs when the container starts. Any additional arguments passed to the container will be passed to the entrypoint.
+  3. ENTRYPOINT – Used to specify a fixed command that always runs when the container starts. Any additional arguments passed during the container will be appended to to the entrypoint cmd.
 
   4. COPY – Used to copy the files and directories from the build context into the image.
 
